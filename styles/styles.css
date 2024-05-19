@@ -53,5 +53,8 @@ body {
 }
 
 footer {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.5rem;
+  text-align: center;
   color: goldenrod;
 }
