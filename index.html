@@ -1,44 +1,127 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="pt-BR">
 
 <head>
-  <meta charset="utf-8">
-  <title>Simon</title>
-  <link rel="stylesheet" href=styles/styles.css>
-  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
 </head>
 
 <body>
-  <h1 id="level-title">Press A Key to Start</h1>
-  <div class="container">
-    <div lass="row">
-
-      <div type="button" id="green" class="btn green">
-
-      </div>
-
-      <div type="button" id="red" class="btn red">
-
-      </div>
+    <canvas id="matrix-canvas"></canvas>
+    <div class="matrix-background">
+        <div class="navbar">
+            <a href="#" class="navbar-brand">Meu Portfólio</a>
+            <a href="#a-origem">A Origem</a>
+            <a href="#a-simulacao">A Simulação</a>
+            <a href="#the-white-rabbit">The Rabbit</a>
+        </div>
+        <header>
+            <h1>Bem-vindo ao Meu Portfólio.</h1>
+        </header>
+        <main>
+            <br>
+            <section id="a-origem" class="session-open">
+                <h2>A Origem (o profissional):</h2>
+                <div class="about-me">
+                    <img src="/static/img/foto-perfil.jpg" alt="Foto do Lucas Bellucci" class="profile-photo">
+                    <div class="session-content">
+                        <p>Meu nome é Lucas Bellucci, codenome "Belluccaz". Sou um programador full-stack especializado em
+                            desenvolvimento de aplicações web e mobile. Com experiência em tecnologias como JavaScript,
+                            React, Node.js, Python, Aprendizado de Máquina (IA), e muito mais...
+                            <br>
+                            Estou pronto para transformar as suas ideias em realidade!
+                            <br>
+                            Siga o Coelho...
+                        </p>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button class="expand-button">Expandir</button>
+                </div>
+            </section>
+            <br>
+            <section id="a-simulacao" class="session-open">
+                <h2>A Simulação (os projetos):</h2>
+                <div class="session-content">
+                    <div class="carousel">
+                        <div class="projeto">
+                            <h3>Projeto 1</h3>
+                            <img src="/static/img/projeto1.png" alt="Projeto 1" class="project-image">
+                            <p class="descricao">Este é um jogo da memória baseado no clássico Simon Game. Ele utiliza JavaScript para criar uma experiência interativa onde os usuários devem repetir sequências de cores geradas aleatoriamente. Conforme o jogo avança, a sequência se torna mais longa e difícil, desafiando a memória e a atenção dos jogadores.</p>
+                            <button class="project-link" data-url="https://belluccaz.github.io/simon-game/">Ver projeto</button>
+                        </div>
+                        <div class="projeto">
+                            <h3>Projeto 2: Análise de dados e deploy simples (Python)</h3>
+                            <img src="/static/img/projeto2.png" alt="Projeto 2" class="project-image">
+                            <p class="descricao">Nesse aplicativo, você pode inserir diversos números para realizar análises estatísticas básicas. Desenvolvido em Python e utilizando a biblioteca Streamlit, este projeto visa simplificar o processo de análise de dados para usuários que não possuem experiência técnica avançada. Ideal para apresentações rápidas e insights imediatos.</p>
+                            <button class="project-link" data-url="https://megapi-belluccaz.streamlit.app/">Ver projeto</button>
+                        </div>
+                        <div class="projeto">
+                            <h3>Projeto 3: Drum Kit</h3>
+                            <img src="/static/img/projeto3.png" alt="Projeto 3" class="project-image">
+                            <p class="descricao">Projeto simples de um "Drum Kit" virtual, onde você pode tocar bateria utilizando o teclado do computador. Cada tecla corresponde a um som de instrumento diferente, permitindo que os usuários criem suas próprias batidas e ritmos. Este projeto foi construído com HTML, CSS e JavaScript.</p>
+                            <button class="project-link" data-url="https://belluccaz.github.io/drum-kit/">Ver projeto</button>
+                        </div>
+                        <div class="projeto">
+                            <h3>Projeto 4: EBAC Shoes</h3>
+                            <img src="/static/img/projeto4.png" alt="Projeto 4" class="project-image">
+                            <p class="descricao">Projeto de website para uma loja fictícia de calçados. Desenvolvido utilizando HTML, CSS e JavaScript, este site possui um layout moderno e responsivo, com seções dedicadas para exibir produtos, promoções e informações de contato. O objetivo deste projeto é demonstrar habilidades de design front-end e usabilidade.</p>
+                            <button class="project-link" data-url="https://belluccaz.github.io/ebac_shoes/">Ver projeto</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button class="expand-button">Expandir</button>
+                </div>
+            </section>
+            <br>
+            <section id="the-white-rabbit">
+                <h2>Siga o Coelho (contato):</h2>
+                <div class="session-content">
+                    <p>Antes de seguir o coelho, preencha:</p>
+                    <form id="contact-form" action="/enviar_email" method="POST">
+                        <div class="input-group">
+                            <label for="name">Nome:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="phone">Telefone:</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="message">Mensagem:</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <button class="submit" type="submit">Enviar</button>
+                    </form>
+                </div>
+                <div class="button-container">
+                    <button class="expand-button">Expandir</button>
+                </div>
+            </section>
+            <br>
+        </main>
     </div>
-
-    <div class="row">
-
-      <div type="button" id="yellow" class="btn yellow">
-
-      </div>
-      <div type="button" id="blue" class="btn blue">
-
-      </div>
-
-    </div>
-
-  </div>
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="./index.js"></script>
-
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/belluccaz" target="_blank"><img src="/static/img/github-icon.png" alt="GitHub"></a>
+            <a href="https://www.linkedin.com/in/lucas-bellucci-353b10298/" target="_blank"><img
+                    src="/static/img/linkedin-logo.png" alt="LinkedIn"></a>
+            <a href="https://twitter.com/belluccaz" target="_blank"><img src="/static/img/twitter.png" alt="Twitter"></a>
+        </div>
+        <p>&copy; 2024 - belluccaz</p>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="/static/js/scripts.js"></script>
 </body>
-<footer>github.com/belluccaz</footer>
 
 </html>
